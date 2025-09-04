@@ -8,6 +8,7 @@ interface ImageProps {
 const Image = ({ word }: ImageProps) => {
   const [images, setImages] = useState<string[]>([]);
   const [error, setError] = useState("");
+   const API_KEY = import.meta.env.VITE_PEXELS_API_KEY;
 
   useEffect(() => {
     if (!word) return;
@@ -20,7 +21,7 @@ const Image = ({ word }: ImageProps) => {
         const response = await axios.get("https://api.pexels.com/v1/search", {
           params: { query: word, per_page: 9 }, // exactly 9 photos
           headers: {
-            Authorization: "Hn2kOcGUDO9CTmXaTym13NejE1wvf0G50RsvhjL8J4ypYZPRzuLOHsSa", // 🔑 your Pexels API key
+            Authorization: API_KEY, // 🔑 your Pexels API key
           },
         });
 
