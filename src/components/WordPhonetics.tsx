@@ -7,7 +7,7 @@ interface WordPhoneticsProps {
 
 const WordPhonetics: React.FC<WordPhoneticsProps> = ({ word, phonetics, playAudio, audioRef }) => {
   return (
-    <div className="text-black text-center mt-9 bg-amber-100 p-1 rounded-xl w-[50%] mx-auto">
+    <div className="text-black text-center mt-9 bg-[var(--primary-color)] p-1 rounded-xl w-[70%] mx-auto">
       <div className="font-bold text-2xl m-3 border-2 border-black p-5 rounded-xl">
         <h2 className="font-bold flex flex-col items-center gap-3">
           {word}

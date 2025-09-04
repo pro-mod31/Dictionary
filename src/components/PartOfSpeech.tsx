@@ -10,7 +10,7 @@ const PartOfSpeech: React.FC<PartOfSpeechProps> = ({ pos, meanings }) => {
   if (filtered.length === 0) return null;
 
   return (
-    <div className="text-black text-center mt-9 bg-amber-100 p-1 rounded-xl w-[50%] mx-auto">
+    <div className="text-black text-center mt-9 bg-[var(--primary-color)] p-1 rounded-xl w-[70%] mx-auto shadow-black">
       <div className="m-3 border-2 border-black p-5 rounded-xl text-left">
         <h3 className="text-xl font-bold mb-3 capitalize">{pos}s:</h3>
         {filtered.map((meaning, mIndex) => (

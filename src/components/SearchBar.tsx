@@ -6,8 +6,8 @@ interface SearchBarProps {
 
 const SearchBar: React.FC<SearchBarProps> = ({ word, setWord, getDefinition }) => {
   return (
-    <div className="text-black text-center mt-9 bg-amber-100 p-1 rounded-xl w-[50%] mx-auto">
-      <div className="text-2xl m-3 border-2 border-black p-5 rounded-xl">
+    <div className="text-black text-center mt-9 bg-[var(--primary-color)] p-1 rounded-xl w-[80%] md:w-[70%] mx-auto">
+      <div className="text-xl md:text-2xl m-3 border-2 border-black p-5 rounded-xl">
         <h2 className="font-bold">What word piques your interest?</h2>
 
         <input
@@ -15,7 +15,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ word, setWord, getDefinition }) =
           value={word}
           onChange={(e) => setWord(e.target.value)}
           placeholder="Search..."
-          className="border-2 border-black p-1 rounded text-center"
+          className="border-2 border-black p-1 rounded text-center w-full sm:w-auto"
         />
 
         <button

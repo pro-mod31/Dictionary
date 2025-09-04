@@ -3,6 +3,7 @@ import axios from "axios";
 import SearchBar from "./SearchBar";
 import WordPhonetics from "./WordPhonetics";
 import PartOfSpeech from "./PartOfSpeech";
+import Image from "./Image";
 
 const Defination = () => {
   const [word, setWord] = useState("");
@@ -18,6 +19,7 @@ const Defination = () => {
       const response = await axios.get(
         `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`
       );
+      console.log(response.data[0]);
       setData(response.data[0]);
     } catch {
       setError("Word not found. Try another one!");
@@ -51,6 +53,7 @@ const Defination = () => {
           {partsOfSpeech.map((pos) => (
             <PartOfSpeech key={pos} pos={pos} meanings={data.meanings} />
           ))}
+          <Image word={data.word} />
         </>
       )}
 
